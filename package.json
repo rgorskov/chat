@@ -1,0 +1,20 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "rgorskov",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rgorskov/chat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rgorskov/chat/issues"
+  },
+  "homepage": "https://github.com/rgorskov/chat#readme",
+  "description": ""
+}

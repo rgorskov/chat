@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.Chat {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "contacts dialog actions";
+}
+
+.Chat-Contacts {
+    grid-area: contacts;
+    border-right: 1px solid #eee;
+}
+
+.Chat-Dialog {
+    grid-area: dialog;
+}
+
+.Chat-Actions {
+    grid-area: actions;
+    border-left: 1px solid #eee;
+}
+
+.Chat-ContactsHeader {
+    border-bottom: 1px solid #eee;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 8px 12px;
+}
+
+.Chat-ContactsList {
+    overflow-y: auto;
+}
+
+.Chat-LastMessage {
+    display: flex;
+    color: #999;
+}
+
+.Chat-LastMessageText {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex-grow: 1;
+    width: 1px;
+}
+
+.UsersList-User {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: 40px 1fr;
+    grid-template-areas: "image name" "image info";
+    cursor: pointer;
+    transition: 0.1s ease background-color;
+    text-decoration: none;
+    color: #000;
+}
+
+.UsersList-User:hover {
+    background-color: #f5f5f5;
+}
+
+.UsersList-User:active {
+    background-color: #eeeeee;
+}
+
+.UsersList-User_active,
+.UsersList-User_active:hover,
+.UsersList-User_active:active {
+    background-color:#03a9f4;
+}
+
+.UsersList-User_active * {
+    color: #fff;
+}
+
+.UsersList-Photo {
+    grid-area: image;
+}
+
+.UsersList-Name {
+    grid-area: name;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.UsersList-UserInfo {
+    grid-area: info;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.Avatar {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.Avatar_size_small {
+    height: 24px;
+    width: 24px;
+}
+
+.Avatar_size_medium {
+    height: 40px;
+    width: 40px;
+}
+
+.Avatar_size_big {
+    height: 140px;
+    width: 140px;
+}
+
+.Avatar-Image {
+    width: 100%;
+}
+
+.Button {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Button_color_green {
+    color: #fff;
+    background-color: #4caf50;
+}
+
+.Button_color_marine {
+    color: #fff;
+    background-color: #009688;
+}
+
+.Button_color_lightblue {
+    color: #fff;
+    background-color: #2196f3;
+}
+
+.Button_color_red {
+    color: #fff;
+    background-color: #f44336;
+}
+
+.Button_color_darkblue {
+    color: #fff;
+    background-color: #03a9f4;
+}
+
+.NewMessage {
+    position: relative;
+    border-top: 1px solid #eee;
+    height: 40px;
+}
+
+.NewMessage-Input {
+    border: none;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.NewMessage-SendButton {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+}
+
+.Chat-Dialog {
+    display: grid;
+    grid-template-rows: 1fr 40px;
+}
+
+.Dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 12px 12px;
+    overflow-y: auto;
+    background-color: #eceff1;
+}
+
+.Dialog-Message {
+    margin-top: 12px;
+    display: flex;
+    padding: 8px 12px;
+    border-radius: 5px;
+    max-width: 60%;
+    font-size: 14px;
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.05);
+}
+
+.Dialog-Message_type_sent {
+    align-self: flex-end;
+    background-color: #f1f8e9;
+    border: 1px solid #dcedc8;
+}
+
+.Dialog-Message_type_received {
+    align-self: flex-start;
+    background-color: #fff;
+    border: 1px solid #eceff1;
+}
+
+.ContactActions {
+    height: 100%;
+    display: grid;
+    grid-gap: 12px;
+    justify-items: center;
+    align-content: flex-start;
+    padding-top: 40px;
+}
+
+.ContactActions-SmallUserPhoto {
+    display: none;
+}
+
+.ContactActions-UserName {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.Modal {
+    
+}
+
+.Modal-Background {
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.Modal-Header {
+    border-bottom: 1px solid #eee;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.Modal-HeaderText {
+    font-size: 16px;
+}
+
+.Modal-CloseButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.Modal-Content {
+    position: fixed;
+    background: #fff;
+    border: 1px solid #eee;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .Chat {
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 40px 1fr;
+        grid-template-areas: 
+            "contacts actions"
+            "contacts dialog";
+    }
+
+    .ContactActions { 
+        margin: 0;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .ContactActions-UserName {
+        flex-grow: 1;
+    }
+
+    .ContactActions-SmallUserPhoto {
+        display: block;
+    }
+
+    .ContactActions-BigUserPhoto {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Chat {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px 1fr;
+        grid-template-areas: 
+            "actions"
+            "dialog";
+    }
+
+    .Chat-Contacts {
+        display: none;
+    }
+}
